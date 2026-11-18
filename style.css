@@ -1,0 +1,238 @@
+/* =====================================================
+   Planning Trip & Tour - style.css
+   Used by: index.html, login.html, signup.html,
+            reset-pw.html, reset-pw-sucess.html
+   ===================================================== */
+
+/* ---------- 1. Reset & variables ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #0b5ea8;
+  --blue-dark: #084a86;
+  --teal: #1aa39a;
+  --light-bg: #e8f6f3;
+  --text: #1f2d3d;
+  --muted: #5b6b7a;
+  --border: #c9d6df;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--light-bg);
+}
+
+a {
+  color: var(--blue);
+}
+
+/* ---------- 2. Navbar (index.html) ---------- */
+.navbar {
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--blue);
+  border-bottom-color: var(--blue);
+}
+
+/* ---------- 3. Page wrappers (centers the panel) ---------- */
+.main-page,
+.reset-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* ---------- 4. Panels (colored box behind the form) ---------- */
+.main-panel,
+.reset-success-panel {
+  width: 100%;
+  max-width: 900px;
+  min-height: 520px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Login + Reset password: green to blue gradient */
+.login-panel,
+.reset-pw-panel,
+.reset-success-panel {
+  background: linear-gradient(160deg, #1aa39a 0%, #0b5ea8 100%);
+}
+
+/* Sign up: sky background */
+.signup-panel {
+  background: linear-gradient(180deg, #8fd3f4 0%, #d6f0fb 60%, #e8f6f3 100%);
+}
+
+/* ---------- 5. Form card (white box) ---------- */
+.form-card {
+  width: 100%;
+  max-width: 320px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.form-card h2 {
+  font-size: 22px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.form-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* ---------- 6. Inputs ---------- */
+.form-card input[type="text"],
+.form-card input[type="email"],
+.form-card input[type="password"] {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 14px;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.form-card input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(11, 94, 168, 0.15);
+}
+
+/* ---------- 7. Buttons (<button> and <a class="btn-primary">) ---------- */
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 11px;
+  margin-top: 6px;
+  border: none;
+  border-radius: 20px;
+  background: var(--blue);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.1s;
+}
+
+.btn-primary:hover {
+  background: var(--blue-dark);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* Link inside the Reset Password button */
+.btn-primary a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* ---------- 8. Text links under the forms ---------- */
+.forget-pw {
+  margin-top: 14px;
+}
+
+.switch-login-signup {
+  margin-top: 10px;
+}
+
+.forget-pw a,
+.switch-login-signup a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.forget-pw a:hover,
+.switch-login-signup a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- 9. Success page extras ---------- */
+.reset-success-panel .form-card p {
+  margin-bottom: 20px;
+}
+
+/* ---------- 10. Responsive (tablet / phone) ---------- */
+@media (max-width: 600px) {
+  .navbar .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main-panel,
+  .reset-success-panel {
+    padding: 20px 12px;
+    min-height: 460px;
+  }
+
+  .form-card {
+    padding: 24px 18px;
+  }
+}
